@@ -1,20 +1,41 @@
 package uwo_map_organization_program;
+import java.awt.image.BufferedImage;
 
 public class floor {
 
-	private int[] room_numbers;
+	private Room[] rooms;
+	private Room[] washrooms;
+	private Room[] eateries;
+	private Room[] stairwells;
+	private Room[] elevator;
+	private Room[] classrooms;
+	
 	private favorites favorite;
-	public floor (int[] room_numbers, favorites inputFavorites) {
-		this.room_numbers = room_numbers;
+	private BufferedImage im;
+	public floor (Room[] rooms, favorites inputFavorites, BufferedImage im) {
+		this.rooms = rooms;
 		this.favorite = inputFavorites;
+		this.im = im;
+		for (int i = 0; i<rooms.length;i++) {
+			// find the type of each room
+		}
 	}
 	
 	
-	public void set_as_favor (int room_number) {
-		
+	public void set_as_favor (Room target) {
+		boolean result = favorite.add_room(target);
+		if (result == false) {
+			System.out.println("Error..the room is already in the list..");
+		}
 	}
 	
-	public void search (int room_number) {
+	public Room search (int target) {
+		for (int i = 0; i<rooms.length;i++) {
+			if (rooms[i].get_roomNumber() == target) {
+				return rooms[i];
+			}
+		}
+		return null;
 		
 	}
 	
@@ -22,41 +43,31 @@ public class floor {
 		return null;
 	}
 	
-	public int[] get_washroom() {
-		return null;
+	
+	public Room[] get_washroom() {
+		return washrooms;
 	}
 	
-	public int[] get_eateries() {
-		return null;
+	public Room[] get_eateries() {
+		return eateries;
 	}
 	
-	public int[] get_stairwells() {
-		return null;
+	public Room[] get_stairwells() {
+		return stairwells;
 	}
 	
-	public int[] get_elevator() {
-		return null;
+	public Room[] get_elevator() {
+		return elevator;
 	}
 	
-	public int[] get_classrooms() {
-		return null;
+	public Room[] get_classrooms() {
+		return classrooms;
 	}
 	
-	public String[] show_favorites() {
-		return null;
+	public favorites show_favorites() {
+		return favorite;
 	}
 	
-	public void select_favour (int room_number) {
-		
-	}
-	
-	public void add_favour (int room_number) {
-		
-	}
-	
-	public void rm_favour (int room_number) {
-		
-	}
 	
 	
 	
