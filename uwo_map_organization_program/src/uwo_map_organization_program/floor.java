@@ -4,20 +4,16 @@ import java.awt.image.BufferedImage;
 public class floor {
 
 	private Room[] rooms;
-	private Room[] washrooms;
-	private Room[] eateries;
-	private Room[] stairwells;
-	private Room[] elevator;
-	private Room[] classrooms;
-	
 	private favorites favorite;
 	private BufferedImage im;
-	public floor (Room[] rooms, favorites inputFavorites, BufferedImage im) {
+	private PointsOfInterest poi;
+	public floor (Room[] rooms, favorites inputFavorites, BufferedImage im, PointsOfInterest poi) {
 		this.rooms = rooms;
 		this.favorite = inputFavorites;
 		this.im = im;
+		this.poi = poi;
 		for (int i = 0; i<rooms.length;i++) {
-			// find the type of each room
+			poi.add_room(rooms[i]);
 		}
 	}
 	
@@ -43,26 +39,6 @@ public class floor {
 		return null;
 	}
 	
-	
-	public Room[] get_washroom() {
-		return washrooms;
-	}
-	
-	public Room[] get_eateries() {
-		return eateries;
-	}
-	
-	public Room[] get_stairwells() {
-		return stairwells;
-	}
-	
-	public Room[] get_elevator() {
-		return elevator;
-	}
-	
-	public Room[] get_classrooms() {
-		return classrooms;
-	}
 	
 	public favorites show_favorites() {
 		return favorite;
