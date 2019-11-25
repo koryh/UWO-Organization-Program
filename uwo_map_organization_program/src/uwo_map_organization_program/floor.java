@@ -30,7 +30,7 @@ public class floor {
 	
 	public Room search (String target) {
 		for (int i = 0; i<rooms.size();i++) {
-			if (rooms.get(i).get_roomNumber() == target) {
+			if (rooms.get(i).get_roomNumber().equals(target)) {
 				return rooms.get(i);
 			}
 		}

@@ -32,4 +32,13 @@ public class StartUp {
 		}
 		return result;
 	}
+	
+	public Building search_building (String target) {
+		for (int i = 0; i<building_list.size();i++) {
+			if (building_list.get(i).get_building_name().equals(target)) {
+				return building_list.get(i);
+			}
+		}
+		return null;
+	}
 }

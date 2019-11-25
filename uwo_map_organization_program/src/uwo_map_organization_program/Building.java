@@ -31,7 +31,7 @@ public class Building {
 	
 	public floor search_floor (String input) {
 		for (int i = 0;i<floor_list.size();i++) {
-			if (floor_list.get(i).get_floor_num() == input) {
+			if (floor_list.get(i).get_floor_num().equals(input)) {
 				return floor_list.get(i);
 			}
 		}
