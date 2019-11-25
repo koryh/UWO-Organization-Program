@@ -1,14 +1,14 @@
 package uwo_map_organization_program;
 
 public class Room {
-    private int room_number;
+    private String room_number;
     private int floor;
     private String building;
     private double x_coordinate;
     private double y_coordinate;
     private String description;
 
-    public Room(int room, int flo, String buil, double[] position, String desc){
+    public Room(String room, int flo, String buil, double[] position, String desc){
         room_number = room;
         floor = flo;
         building = buil;
@@ -17,7 +17,7 @@ public class Room {
         description = desc;
 
     }
-    public int get_roomNumber(){
+    public String get_roomNumber(){
         return room_number;
     }
 
@@ -40,7 +40,7 @@ public class Room {
         return description;
     }
 
-    public void setRoom_number(int num){
+    public void setRoom_number(String num){
         room_number = num;
     }
 

@@ -1,19 +1,22 @@
 package uwo_map_organization_program;
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 public class floor {
 
-	private Room[] rooms;
+	private List<Room> rooms;
 	private favorites favorite;
 	private BufferedImage im;
 	private PointsOfInterest poi;
-	public floor (Room[] rooms, favorites inputFavorites, BufferedImage im, PointsOfInterest poi) {
+	String floor_num;
+	public floor (List<Room> rooms, favorites inputFavorites, BufferedImage im, PointsOfInterest poi, String floor_num) {
 		this.rooms = rooms;
 		this.favorite = inputFavorites;
 		this.im = im;
 		this.poi = poi;
-		for (int i = 0; i<rooms.length;i++) {
-			poi.add_room(rooms[i]);
+		this.floor_num = floor_num;
+		for (int i = 0; i<rooms.size() ;i++) {
+			poi.add_room(rooms.get(i));
 		}
 	}
 	
@@ -25,10 +28,10 @@ public class floor {
 		}
 	}
 	
-	public Room search (int target) {
-		for (int i = 0; i<rooms.length;i++) {
-			if (rooms[i].get_roomNumber() == target) {
-				return rooms[i];
+	public Room search (String target) {
+		for (int i = 0; i<rooms.size();i++) {
+			if (rooms.get(i).get_roomNumber() == target) {
+				return rooms.get(i);
 			}
 		}
 		return null;
@@ -44,6 +47,19 @@ public class floor {
 		return favorite;
 	}
 	
+	public String get_floor_num () {
+		return this.floor_num;
+	}
+
+	public String[] get_room_num_list () {
+		String[] result = new String[100];
+		int counter = 0;
+		for (int i = 0; i<rooms.size();i++) {
+			result[counter] = rooms.get(i).get_roomNumber();
+			counter++;
+		}
+		return result;
+	}
 	
 	
 	
