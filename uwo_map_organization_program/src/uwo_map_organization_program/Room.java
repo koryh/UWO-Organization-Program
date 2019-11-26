@@ -4,11 +4,11 @@ public class Room {
     private String room_number;
     private int floor;
     private String building;
-    private double x_coordinate;
-    private double y_coordinate;
+    private int x_coordinate;
+    private int y_coordinate;
     private String description;
 
-    public Room(String room, int flo, String buil, double[] position, String desc){
+    public Room(String room, int flo, String buil, int[] position, String desc){
         room_number = room;
         floor = flo;
         building = buil;
@@ -52,7 +52,7 @@ public class Room {
         building = str;
     }
 
-    public void setPosition(double[] position){
+    public void setPosition(int[] position){
         x_coordinate = position[0];
         y_coordinate = position[1];
     }

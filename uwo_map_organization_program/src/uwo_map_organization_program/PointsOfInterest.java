@@ -1,87 +1,78 @@
 package uwo_map_organization_program;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PointsOfInterest {
 
-	private Room[] washrooms;
-	private Room[] eateries;
-	private Room[] elevator;
-	private Room[] classrooms;
-	private final int array_ini_size = 10;
-	private int washroom_counter;
-	private int eateries_counter;
-	private int elevator_counter;
-	private int classrooms_counter;
+	private List<Washroom> washrooms;
+	private List<Eatery> eateries;
+	private List<Elevator> elevator;
+	private List<Classroom> classrooms;
+	private List<Room> rooms;
 	
 	public PointsOfInterest() {
-		washrooms = new Room[array_ini_size];
-		eateries = new Room[array_ini_size];
-		elevator = new Room[array_ini_size];
-		classrooms = new Room[array_ini_size];
-		washroom_counter = 0;
-		eateries_counter = 0;
-		elevator_counter = 0;
-		classrooms_counter = 0;
+		washrooms = new ArrayList<Washroom>();
+		eateries = new ArrayList<Eatery>();
+		elevator = new ArrayList<Elevator>();
+		classrooms = new ArrayList<Classroom>();
+		rooms = new ArrayList<Room>();
+
 	}
 	
-	public void add_room(Room target) {
-		if (washroom_counter == washrooms.length) {
-			washrooms = expandCapacity(washrooms, washroom_counter);
-		}
-		if (eateries_counter == eateries.length) {
-			eateries = expandCapacity(eateries, eateries_counter);
-		}
-		if (elevator_counter == elevator.length) {
-			elevator = expandCapacity (elevator, elevator_counter);
-		}
-		if (classrooms_counter == classrooms.length) {
-			classrooms = expandCapacity (classrooms, classrooms_counter);
-		}
+	public void add_room_washroom(Washroom target) {
 		
-		if (target.getClass() == Washroom.class) {
-			washrooms[washroom_counter] = target;
-			washroom_counter++;
-		}
-		else if (target.getClass() == Elevator.class) {
-			elevator[elevator_counter] = target;
-			elevator_counter++;
-		}
-		else if(target.getClass() == Eatery.class) {
-			eateries[eateries_counter] = target;
-			eateries_counter++;
-		}
-		else if (target.getClass() == Classroom.class) {
-			classrooms[classrooms_counter] = target;
-			classrooms_counter++;
-		}
-		else {
-			System.out.println("Error..Invalid room type..");
-		}
-		
+		washrooms.add(target);
 		
 	}
 	
-	private Room[] expandCapacity(Room[] target, int target_counter) {
-		Room [] newList = new Room[target.length+10];
-		for (int i = 0; i<target_counter;i++) {
-			newList[i] = target[i];
-		}
-		return newList;
-	
+	public void add_room_eatery(Eatery target) {
+		eateries.add(target);
 	}
-	public Room[] get_washroom() {
+	
+	public void add_room_elevator (Elevator target) {
+		elevator.add(target);
+	}
+	
+	public void add_room_classroom (Classroom target) {
+		classrooms.add(target);
+	}
+	
+	public void add_room (Room target) {
+		rooms.add(target);
+	}
+
+	public List<Washroom> get_washroom() {
 		return washrooms;
 	}
 	
-	public Room[] get_eateries() {
+	public List<Eatery> get_eateries() {
 		return eateries;
 	}
 	
 	
-	public Room[] get_elevator() {
+	public List<Elevator> get_elevator() {
 		return elevator;
 	}
 	
-	public Room[] get_classrooms() {
+	public List<Classroom> get_classrooms() {
 		return classrooms;
 	}
+	
+	public int get_washroom_num () {
+		return washrooms.size();
+	}
+	
+	public int get_eateries_num () {
+		return eateries.size();
+	}
+	
+	public int get_elevator_num() {
+		return elevator.size();
+	}
+	
+	public int get_classrooms_num() {
+		return classrooms.size();
+	}
+	
 }

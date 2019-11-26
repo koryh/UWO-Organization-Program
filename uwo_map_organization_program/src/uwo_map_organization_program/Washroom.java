@@ -1,7 +1,7 @@
 package uwo_map_organization_program;
 public class Washroom extends Room{
     private String type;
-    public Washroom(int room, int flo, String buil, double[] position, String desc, String ty) {
+    public Washroom(String room, int flo, String buil, int[] position, String desc, String ty) {
         super(room, flo, buil, position, desc);
         type = ty;
     }

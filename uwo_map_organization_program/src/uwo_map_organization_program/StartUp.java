@@ -3,23 +3,47 @@ package uwo_map_organization_program;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 public class StartUp {
 
 	List<Building> building_list;
+	PointsOfInterest poi;
+	favorites fav;
 	public StartUp() {
-		double [] temp = {2.2,5.5};
-		Room room1 = new Room ("MC101", 1, "Middlesex", temp, "This is discription");
-		Room room2 = new Room ("MC102", 1, "Middlesex", temp, "This is discription");
-		List<Room> room_list = new ArrayList<Room>();
-		room_list.add(room1);
-		room_list.add(room2);
-		favorites fav = new favorites();
-		floor floor1 = new floor (room_list,fav, null, null, "1");
-		List<floor> floor_list = new ArrayList<floor>();
-		floor_list.add(floor1);
-		Building building1 = new Building(floor_list, "Middlesex");
-		building_list = new ArrayList<Building>();
-		building_list.add(building1);
+		MetaData start = new MetaData();
+		poi = new PointsOfInterest();
+		fav = new favorites();
+		JSONObject inputJson = start.readBuilding("json/test.json");
+		String buildingName = (String) inputJson.get("building name");
+		Building build = new Building(buildingName);
+		int numOfFloor = (int) inputJson.get("numOfFloor");
+		JSONArray floor_index = (JSONArray) inputJson.get("floor numbers");
+		for (Object temp:floor_index) {
+			int current_floor = (int) temp;
+			List<Room> room_list = start.getFloor(inputJson, current_floor);
+			String img = start.getMap(inputJson, current_floor);
+			floor floor_obj = new floor(room_list,fav,img,poi, current_floor);
+			build.add_floor(floor_obj);
+			for (int i = 0; i<room_list.size();i++) {
+				Room current_visiting = room_list.get(i);
+				if (current_visiting.getClass() == Washroom.class) {
+					poi.add_room_washroom((Washroom)current_visiting); 
+				}
+				else if (current_visiting.getClass() == Elevator.class) {
+					poi.add_room_elevator((Elevator) current_visiting);
+				}
+				else if(current_visiting.getClass() == Eatery.class) {
+					poi.add_room_eatery((Eatery)current_visiting);
+				}
+				else if (current_visiting.getClass() == Classroom.class) {
+					poi.add_room_classroom((Classroom)current_visiting);
+				}
+			}
+		}
+	
+	
 		
 	}
 	
@@ -41,4 +65,9 @@ public class StartUp {
 		}
 		return null;
 	}
+	
+	public PointsOfInterest get_poi() {
+		return poi;
+	}
+	
 }

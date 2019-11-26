@@ -1,0 +1,50 @@
+{
+  "building name":"building",
+  "numOfFloor":2,
+  "img list":[
+    "Map/MC_Map/MC_1.jpg","Map/MC_Map/MC_2.jpg"
+    ],
+  "floor list":[
+    {
+      "floor":[
+        {"room":{
+          "roomNumber":"MC101",
+          "floor":1,
+          "building": "MC",
+          "x_coordinate":10,
+          "y_coordinate":10,
+          "description":"this 101"
+        }},
+        {"room":{
+          "roomNumber":"MC102",
+          "floor":1,
+          "building": "MC",
+          "x_coordinate":10,
+          "y_coordinate":20,
+          "description":"this is 102"
+        }}
+      ]
+    },
+    
+    {
+      "floor":[
+        {"room":{
+          "roomNumber":"MC201",
+          "floor":2,
+          "building": "MC",
+          "x_coordinate":20,
+          "y_coordinate":10,
+          "description":"103"
+        }},
+        {"room":{
+          "roomNumber":"MC201",
+          "floor":2,
+          "building": "MC",
+          "x_coordinate":20,
+          "y_coordinate":20,
+          "description":"202"
+        }}
+      ]
+    }
+  ]
+}
