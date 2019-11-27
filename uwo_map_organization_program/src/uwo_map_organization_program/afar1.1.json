@@ -1,0 +1,555 @@
+{
+  "building name": "Advanced Facility For Avain Research",
+  "numOfFloor": 2,
+  "floor numbers": [
+    1,
+    2
+  ],
+  "floor list": [
+    {
+      "floor level": 1,
+      "floor map": "Map/AFAR_Map/AFAR_1.png",
+      "floor": [
+        {
+          "room": {
+            "roomNumber": "AFAR150B",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 134,
+            "y_coordinate": 380,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR112",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 224,
+            "y_coordinate": 299,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR114",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 265,
+            "y_coordinate": 282,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR116",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 294,
+            "y_coordinate": 281,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR118",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 326,
+            "y_coordinate": 280,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR120",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 360,
+            "y_coordinate": 282,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR122",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 392,
+            "y_coordinate": 282,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR124",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 426,
+            "y_coordinate": 278,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR128",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 477,
+            "y_coordinate": 281,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR130",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 528,
+            "y_coordinate": 278,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR132",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 560,
+            "y_coordinate": 281,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR134",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 590,
+            "y_coordinate": 279,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR136",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 622,
+            "y_coordinate": 276,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR136A",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 	658,
+            "y_coordinate": 280,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR140",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 658,
+            "y_coordinate": 359,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR140A",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 657,
+            "y_coordinate": 326,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR140B",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 759,
+            "y_coordinate": 355,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR140C",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 653,
+            "y_coordinate": 394,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR140B-1",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 856,
+            "y_coordinate": 365,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR140B-3",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 845,
+            "y_coordinate": 265,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR100",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 684,
+            "y_coordinate": 467,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR139",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 519,
+            "y_coordinate": 400,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR133",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 579,
+            "y_coordinate": 361,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR131",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 531,
+            "y_coordinate": 359,
+            "description": "Room"
+          }},
+         {"room": {
+            "roomNumber": "AFAR129",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 495,
+            "y_coordinate": 359,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR127",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 446,
+            "y_coordinate": 357,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR101",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 443,
+            "y_coordinate": 418,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR103",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 424,
+            "y_coordinate": 394,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR105",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 389,
+            "y_coordinate": 397,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR105X",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 365,
+            "y_coordinate": 410,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR115",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 327,
+            "y_coordinate": 367,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR123",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 393,
+            "y_coordinate": 366,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR112A",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 221,
+            "y_coordinate": 354,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR110",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 224,
+            "y_coordinate": 390,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR108",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 225,
+            "y_coordinate": 460,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR106",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 325,
+            "y_coordinate": 465,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AFAR104",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 379,
+            "y_coordinate": 464,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR102",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 406,
+            "y_coordinate": 462,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AFAR102A",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 438,
+            "y_coordinate": 462,
+            "description": "Washroom",
+            "type":"universal"
+          }},
+          {"room": {
+            "roomNumber": "ELEV.1",
+            "floor": 1,
+            "building": "AFAR",
+            "x_coordinate": 348,
+            "y_coordinate": 465,
+            "description": "Elevator",
+            "maximum_weight":100
+          }}
+      ]
+    },
+    {
+      "floor level": 2,
+      "floor map": "Map/AFAR_Map/AFAR_2.png",
+      "floor": [
+        {
+          "room": {
+            "roomNumber": "AFAR229",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 338,
+            "y_coordinate": 221,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR227",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 385,
+            "y_coordinate": 220,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR228",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 325,
+            "y_coordinate": 376,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR224",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 364,
+            "y_coordinate": 277,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR228A",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 328,
+            "y_coordinate": 307,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR224A",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 363,
+            "y_coordinate": 309,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR218",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 332,
+            "y_coordinate": 342,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR220",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 366,
+            "y_coordinate": 342,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR225",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 474,
+            "y_coordinate": 257,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR225A",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 425,
+            "y_coordinate": 336,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR211",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 485,
+            "y_coordinate": 337,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR210X",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 538,
+            "y_coordinate": 343,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR207",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 567,
+            "y_coordinate": 225,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR205",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 623,
+            "y_coordinate": 225,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR203",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 687,
+            "y_coordinate": 254,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR202",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 683,
+            "y_coordinate": 318,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR140B-2",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 886,
+            "y_coordinate": 303,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR200",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 771,
+            "y_coordinate": 403,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR201",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 416,
+            "y_coordinate": 405,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR216",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 422,
+            "y_coordinate": 401,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR214",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 456,
+            "y_coordinate": 406,
+            "description": "Washroom",
+            "type":"women"
+          }},
+          {
+          "room": {
+            "roomNumber": "AFAR212",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 478,
+            "y_coordinate": 406,
+            "description": "Washroom",
+            "type":"men"
+          }},
+          {
+          "room": {
+            "roomNumber": "ELEV.1",
+            "floor": 2,
+            "building": "AFAR",
+            "x_coordinate": 384,
+            "y_coordinate": 408,
+            "description": "Elevator",
+            "maximum_weight": 1000
+          }}
+      ]
+    }
+  ]
+}
