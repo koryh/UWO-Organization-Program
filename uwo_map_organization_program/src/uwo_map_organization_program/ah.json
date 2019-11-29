@@ -1,0 +1,791 @@
+{
+  "building name": "Alumi Hall",
+  "numOfFloor": 3,
+  "floor numbers": [
+    -1,
+    1,
+    2
+  ],
+  "floor list": [
+    {
+      "floor level": 1,
+      "floor map": "Map/AH_Map/AH_1.png",
+      "floor": [
+        {
+          "room": {
+            "roomNumber": "AH110A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 531,
+            "y_coordinate": 129,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH110B",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 552,
+            "y_coordinate": 165,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH110C",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 562,
+            "y_coordinate": 191,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH110D",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 572,
+            "y_coordinate": 225,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH112",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 577,
+            "y_coordinate": 248,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH111",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 553,
+            "y_coordinate": 251,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH110",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 532,
+            "y_coordinate": 178,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH108A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 470,
+            "y_coordinate": 165,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH109",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 482,
+            "y_coordinate": 190,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH106",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 494,
+            "y_coordinate": 211,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH107",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 490,
+            "y_coordinate": 223,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH108",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 464,
+            "y_coordinate": 202,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH106",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 492,
+            "y_coordinate": 272,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH105",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 496,
+            "y_coordinate": 330,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH106A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 468,
+            "y_coordinate": 286,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH105A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 472,
+            "y_coordinate": 357,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH104",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 491,
+            "y_coordinate": 391,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH104A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 461,
+            "y_coordinate": 418,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH102",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 468,
+            "y_coordinate": 450,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH103",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 486,
+            "y_coordinate": 461,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH100",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 555,
+            "y_coordinate": 443,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH101",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 531,
+            "y_coordinate": 516,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH113",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 354,
+            "y_coordinate": 489,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH114",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 291,
+            "y_coordinate": 495,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH115",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 299,
+            "y_coordinate": 429,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH115A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 297,
+            "y_coordinate": 395,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH115B",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 288,
+            "y_coordinate": 370,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH116B",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 307,
+            "y_coordinate": 368,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH116B",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 295,
+            "y_coordinate": 340,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH116",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 302,
+            "y_coordinate": 304,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH117B",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 303,
+            "y_coordinate": 274,
+            "description": "Room"
+          }},
+         { "room": {
+            "roomNumber": "AH117A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 298,
+            "y_coordinate": 250,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH117",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 302,
+            "y_coordinate": 224,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "AH119",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 286,
+            "y_coordinate": 165,
+            "description": "Room"
+          }},
+          {"room": {
+            "roomNumber": "ELEV.A",
+            "floor": 1,
+            "building": "AH",
+            "x_coordinate": 384,
+            "y_coordinate": 165,
+            "description": "Elevator",
+            "maximum_weight":1000
+          }}
+      ]
+    },
+    {
+      "floor level": 2,
+      "floor map": "Map/AH_Map/AH_2.png",
+      "floor": [
+        {
+          "room": {
+            "roomNumber": "AH207",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 177,
+            "y_coordinate": 325,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH206",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 233,
+            "y_coordinate": 320,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH201",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 358,
+            "y_coordinate": 366,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH203",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 283,
+            "y_coordinate": 472,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH202",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 445,
+            "y_coordinate": 504,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH200",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 598,
+            "y_coordinate": 326,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH204",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 283,
+            "y_coordinate": 179,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "ELEV.A",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 398,
+            "y_coordinate": 144,
+            "description": "Elevator",
+            "maximum_weight":1000
+          }},
+          {
+          "room": {
+            "roomNumber": "AH205",
+            "floor": 2,
+            "building": "AH",
+            "x_coordinate": 439,
+            "y_coordinate": 151,
+            "description": "Room"
+          }}
+      ]
+    },
+    {
+      "floor level": -1,
+      "floor map": "Map/AH_Map/AH_-1.png",
+      "floor": [
+        {
+          "room": {
+            "roomNumber": "AH11",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 473,
+            "y_coordinate": 478,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 507,
+            "y_coordinate": 548,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11B",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 470,
+            "y_coordinate": 538,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11C",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 436,
+            "y_coordinate": 519,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11D",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 400,
+            "y_coordinate": 506,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11E",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 360,
+            "y_coordinate": 502,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11F",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 472,
+            "y_coordinate": 418,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11G",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 503,
+            "y_coordinate": 425,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11H",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 533,
+            "y_coordinate": 432,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11J",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 528,
+            "y_coordinate": 467,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH11K",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 520,
+            "y_coordinate": 498,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH12",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 547,
+            "y_coordinate": 477,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH13",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 554,
+            "y_coordinate": 447,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH14",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 558,
+            "y_coordinate": 428,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH15",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 389,
+            "y_coordinate": 316,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH15A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 433,
+            "y_coordinate": 442,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH15X",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 443,
+            "y_coordinate": 414,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 531,
+            "y_coordinate": 349,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 540,
+            "y_coordinate": 388,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16B",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 510,
+            "y_coordinate": 382,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16C",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 495,
+            "y_coordinate": 372,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16D",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 484,
+            "y_coordinate": 337,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16E",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 482,
+            "y_coordinate": 303,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16F",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 527,
+            "y_coordinate": 274,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16G",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 525,
+            "y_coordinate": 307,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16H",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 558,
+            "y_coordinate": 270,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16J",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 585,
+            "y_coordinate": 289,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16K",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 583,
+            "y_coordinate": 326,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16L",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 581,
+            "y_coordinate": 364,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH16M",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 548,
+            "y_coordinate": 308,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH17",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 507,
+            "y_coordinate": 199,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH17A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 532,
+            "y_coordinate": 123,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH17B",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 552,
+            "y_coordinate": 151,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH18",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 304,
+            "y_coordinate": 255,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH18A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 291,
+            "y_coordinate": 230,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH18B",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 298,
+            "y_coordinate": 207,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH19",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 215,
+            "y_coordinate": 455,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH20",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 214,
+            "y_coordinate": 407,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH21",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 215,
+            "y_coordinate": 355,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH22",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 214,
+            "y_coordinate": 305,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH24",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 213,
+            "y_coordinate": 204,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "AH25",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 366,
+            "y_coordinate": 155,
+            "description": "Room"
+          }},
+          {
+          "room": {
+            "roomNumber": "ELEV.A",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 384,
+            "y_coordinate": 147,
+            "description": "Elevator",
+            "maximum_weight":1000
+          }},
+          {
+          "room": {
+            "roomNumber": "AH23",
+            "floor": -1,
+            "building": "AH",
+            "x_coordinate": 215,
+            "y_coordinate": 257,
+            "description": "Room"
+          }}
+          ]
+    }
+  ]
+}

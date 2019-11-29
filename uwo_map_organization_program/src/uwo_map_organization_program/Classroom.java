@@ -1,0 +1,14 @@
+public class Classroom extends Room {
+    private int maximum_seats;
+    public Classroom(int room, int flo, String buil, double[] position, String desc, int max) {
+        super(room, flo, buil, position, desc);
+        maximum_seats = max;
+    }
+    public int getMaximum_seats(){
+        return maximum_seats;
+    }
+
+    public void setMaximum_seats(int max){
+        maximum_seats = max;
+    }
+}
