@@ -43,7 +43,7 @@ public class MetaData {
         for (int i = 0; i < numbers.length; i++){
             numberList.add(numbers[i]);
         }
-        building.put("map list",numberList);
+        building.put("floor numbers",numberList);
         JSONArray floorList = new JSONArray();
 
         for (int j = 0; j < floors.size(); j++){
