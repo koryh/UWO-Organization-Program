@@ -1,8 +1,10 @@
 package uwo_map_organization_program;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,32 +30,35 @@ public class MetaData {
 
     /**
      * Generate a JSONObject (building)
-     * @param maps: List of maps
+     * @param numbers: List of levels
      * @param floors: List of JSONObject (roomJSONList)
      * @return : JSONObject (building)
      */
-    public static JSONObject buildingJSON(String buildingName, int numOfFloor, String[] maps, JSONObject[] floors){
+    public static JSONObject buildingJSON(String buildingName, int numOfFloor,int[] numbers, ArrayList<JSONObject> floors){
         JSONObject building = new JSONObject();
         building.put("building name",buildingName);
         building.put("numOfFloor", numOfFloor);
 
-        JSONArray mapList = new JSONArray();
-        for (int i = 0; i < maps.length; i++){
-            mapList.add(maps[i]);
+        JSONArray numberList = new JSONArray();
+        for (int i = 0; i < numbers.length; i++){
+            numberList.add(numbers[i]);
         }
-        building.put("map list",mapList);
-
+        building.put("floor numbers",numberList);
         JSONArray floorList = new JSONArray();
-        for (int j = 0; j < floors.length; j++){
-            floorList.add(floors[j]);
+
+        for (int j = 0; j < floors.size(); j++){
+            floorList.add(floors.get(j));
         }
         building.put("floor list", floorList);
-
         return building;
     }
 
-
-    public static JSONObject roomJSONList(List<Room> roomList){
+    /**
+     * create JSON object that contains list of rooms
+     * @param roomList: List of Rooms objects
+     * @return JSON obj
+     */
+    public static JSONObject roomJSONList(List<Room> roomList, String map, int level){
         JSONArray roomArray =  new JSONArray();
         JSONObject roomJSONList = new JSONObject();
         for (int i = 0; i < roomList.size(); i++){// Generate list of Room objects
@@ -61,18 +66,57 @@ public class MetaData {
             String roomNum = target.get_roomNumber();
             int floor = target.get_floor();
             String building = target.get_building();
-            double[] position = target.get_position();
-            double x = position[0];
-            double y = position[1];
+            int x = target.get_x();
+            int y = target.get_y();
             String description = target.get_description();
             JSONObject roomObj = roomJSON(roomNum, floor, building, x, y, description);
-            roomArray.add(roomObj);
+
+            JSONObject roomDetails = new JSONObject();
+            roomDetails.put("roomNumber", roomNum);
+            roomDetails.put("floor", floor);
+            roomDetails.put("building", building);
+            roomDetails.put("x_coordinate", x);
+            roomDetails.put("y_coordinate", y);
+            roomDetails.put("description", description);
+            // Special rooms
+            if (description.equals("Classroom")){
+                Classroom replaced = (Classroom) target;
+                int tempmax = replaced.getMaximum_seats();
+                roomDetails.put("maximum_seats",tempmax);
+            } else if (description.equals("Eatery")){
+                Eatery replaced = (Eatery) target;
+                int tempmax = replaced.getRate();
+                roomDetails.put("rate",tempmax);
+            }  else if (description.equals("Elevator")){
+                Elevator replaced = (Elevator) target;
+                int tempmax = replaced.getMaximum_weight();
+                roomDetails.put("maximum_weight",tempmax);
+            } else if (description.equals("Washroom")){
+                Washroom replaced = (Washroom) target;
+                String tempmax = replaced.getType();
+                roomDetails.put("type",tempmax);
+            }
+            JSONObject roomObject = new JSONObject();
+            roomObject.put("room", roomDetails);
+            roomArray.add(roomObject);
         }
-        roomJSONList.put("room list",roomArray);
+        roomJSONList.put("floor map",map);
+        roomJSONList.put("floor level",level);
+        roomJSONList.put("floor",roomArray);
         return roomJSONList;
     }
 
-    public static JSONObject roomJSON(String roomNumber, int floor, String building, double x_coordinate, double y_coordinate, String description){
+    /**
+     *
+     * @param roomNumber: room number
+     * @param floor: which floor
+     * @param building: which building
+     * @param x_coordinate: x coordinate
+     * @param y_coordinate: y coordinate
+     * @param description: type of room
+     * @return: room JSON object
+     */
+    public static JSONObject roomJSON(String roomNumber, int floor, String building, int x_coordinate, int y_coordinate, String description){
         JSONObject roomDetails = new JSONObject();
         roomDetails.put("roomNumber", roomNumber);
         roomDetails.put("floor", floor);
@@ -80,6 +124,7 @@ public class MetaData {
         roomDetails.put("x_coordinate", x_coordinate);
         roomDetails.put("y_coordinate", y_coordinate);
         roomDetails.put("description", description);
+
         JSONObject roomObject = new JSONObject();
         roomObject.put("room", roomDetails);
 
@@ -87,14 +132,15 @@ public class MetaData {
     }
 
     /**
-     *
+     * Read file name, and return JSONObj
      * @return: A JSONObject which is building
      */
     public static JSONObject readBuilding(String file) {
+    	URL url = MetaData.class.getResource(file);
         JSONParser jsonParser = new JSONParser();
         JSONObject building = new JSONObject();
 
-        try (FileReader reader = new FileReader(file)) {
+        try (FileReader reader = new FileReader(url.getPath())) {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
             building = (JSONObject) obj;
@@ -105,17 +151,33 @@ public class MetaData {
         return building;
     }
 
+    /**
+     *
+     * @param building: which building you want to see
+     * @return: list of floors in that building
+     */
     public static JSONArray getFloorList ( JSONObject building){
         JSONArray floor_list = (JSONArray) building.get("floor numbers");
         return floor_list;
     }
 
+
+    /**
+     *
+     * @param building: which building
+     * @param floorNum: which floor
+     * @return: address of the map
+     */
     public static String getMap (JSONObject building, int floorNum){
         String map="";
         JSONArray floorList = (JSONArray) building.get("floor list");
         for (Object flo : floorList) {
             JSONObject floor = (JSONObject) flo;
-            int level = (int)floor.get("floor level");
+            
+            Long templevel1 = (Long)floor.get("floor level");
+    		Integer templevel = new Integer (templevel1.intValue());
+    		int level = templevel.intValue();
+            
             if (floorNum == level){
                 map = (String) floor.get("floor map");
             }
@@ -123,35 +185,71 @@ public class MetaData {
         return map;
     }
 
+
+    /**
+     *
+     * @param building: which building
+     * @param floorNum: which floor
+     * @return: list of Room object in that floor
+     */
     public static List<Room> getFloor(JSONObject building, int floorNum){
         // Get list of floors
         JSONArray floorList = (JSONArray) building.get("floor list");
         List<Room> roomList = new ArrayList<Room>();
         for (Object flo : floorList) {// Search floor number
             JSONObject floor = (JSONObject) flo;// Get list of rooms
-            if (floorNum == (int) floor.get("floor level")) {// Floor number matched
-                JSONArray roomJSONList = (JSONArray) floor.get("room list");
+            
+            Long tempNum = (Long)floor.get("floor level");
+    		Integer temppNum = new Integer (tempNum.intValue());
+    		int tempppNum = temppNum.intValue();
+    		
+            if (floorNum == tempppNum) {// Floor number matched
+                JSONArray roomJSONList = (JSONArray) floor.get("floor");
                 for (Object obj : roomJSONList) {// For each room...
-                    JSONObject JSONroom = (JSONObject) obj;// Get room info
+                	JSONObject tempJSONroom = (JSONObject) obj;
+                    JSONObject JSONroom = (JSONObject) tempJSONroom.get("room");// Get room info
 
                     // Create Room objects
                     String roomNum = (String) JSONroom.get("roomNumber");
-                    int floorNumber = (int) JSONroom.get("floor");
+                    
+                    Long tempFloor1 = (Long)JSONroom.get("floor");
+            		Integer temppFloor = new Integer (tempFloor1.intValue());
+            		int floorNumber = temppNum.intValue();
+                    
                     String buildingName = (String) JSONroom.get("building");
-                    int x_coordinate = (int) JSONroom.get("x_coordinate");
-                    int y_coordinate = (int) JSONroom.get("y_coordinate");
+                    
+                    Long tempx1 = (Long)JSONroom.get("x_coordinate");
+            		Integer tempx = new Integer (tempx1.intValue());
+            		int x_coordinate = tempx.intValue();
+                    
+                    Long tempy1 = (Long)JSONroom.get("y_coordinate");
+            		Integer tempy = new Integer (tempy1.intValue());
+            		int y_coordinate = tempy.intValue();
+                    
                     String description = (String) JSONroom.get("description");
                     int[] position = {x_coordinate, y_coordinate};
                     if (description.equals("Classroom")){
-                        int max = (int)JSONroom.get("maximum_seats");
+
+                        Long tempmax1 = (Long)JSONroom.get("maximum_seats");
+                		Integer tempmax = new Integer (tempmax1.intValue());
+                		int max = tempmax.intValue();
+
                         Classroom room = new Classroom(roomNum,floorNum,buildingName,position,description,max);
                         roomList.add(room);
                     } else if (description.equals("Eatery")){
-                        int rate = (int) JSONroom.get("rate");
+
+                        Long temprate1 = (Long)JSONroom.get("rate");
+                		Integer temprate = new Integer (temprate1.intValue());
+                		int rate = temprate.intValue();
+
                         Eatery room = new Eatery(roomNum,floorNum,buildingName,position,description,rate);
                         roomList.add(room);
                     }  else if (description.equals("Elevator")){
-                        int max = (int) JSONroom.get("maximum_weight");
+
+                        Long tempmax1 = (Long)JSONroom.get("maximum_weight");
+                		Integer tempmax = new Integer (tempmax1.intValue());
+                		int max = tempmax.intValue();
+
                         Elevator room = new Elevator(roomNum,floorNum,buildingName,position,description,max);
                         roomList.add(room);
                     } else if (description.equals("Washroom")){
@@ -170,50 +268,68 @@ public class MetaData {
     }
 
     /**
-     * test function
-     * @param loca: Which is room JSON object
+     *
+     * @param file: file name
+     * @return: array of bulidings
      */
-    private static void parseRoomObject(JSONObject loca) {
-        //Get room object within list
-        JSONObject location = (JSONObject) loca.get("room");
+    public static JSONArray readBuildingArray(String file){
+        URL url = MetaData.class.getResource(file);
+        JSONParser jsonParser = new JSONParser();
+        JSONArray array = new JSONArray();
 
-        //Get room number
-        String roomNumber = (String) location.get("roomNumber");
-        System.out.println(roomNumber);
-
-        //Get floor
-        int floor = (int) location.get("floor");
-        System.out.println(floor);
-
-        //Get building
-        String building = (String) location.get("building");
-        System.out.println(building);
-
-        //Get  x coordinates
-        int x_coordinate = (int) location.get("x_coordinate");
-        System.out.println(x_coordinate);
-
-        //Get  y coordinates
-        int y_coordinate = (int) location.get("y_coordinate");
-        System.out.println(y_coordinate);
-
-        //Get description
-        String description = (String) location.get("description");
-        System.out.println(description);
+        try (FileReader reader = new FileReader(url.getPath())) {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+            array = (JSONArray) obj;
+                    return array;
+            } catch (IOException | ParseException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
-    public static void main(String[] args){
-        // Testing programs
-        int[] position = {2,3};
-        List<Room> list = new ArrayList<Room>();
 
-        Room room1 = new Room("MC101",2,"ra",position,"des");
-        Room room2 = new Room("MC202",2,"ra",position,"dsss");
-        list.add(room1);
-        list.add(room2);
+    /**
+     * Write JSONArray into a file
+     * @param jsonArray: inpiuts
+     * @param fileName: file location
+     */
+    public static void writeJSONArr(JSONArray jsonArray, String fileName){
+        URL url = MetaData.class.getResource("/json");
+        File loca = new File(url.getPath()+"/"+fileName);
+        try (FileWriter file = new FileWriter(loca)) {
+            file.write(jsonArray.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        System.out.println(list.get(1).get_description());
-//        readBuilding();
 
+    /**
+     * Rewrite/ Update JSON file
+     * @param buildList: list of Buildings
+     */
+    public static void reWrite(List<Building> buildList){
+        JSONArray big_json = new JSONArray();
+        for (int i = 0; i < buildList.size(); i++){
+            Building eachBuilding = buildList.get(i);
+            List<floor> floorList = eachBuilding.get_floor_list();
+            ArrayList<JSONObject> roomJSONArray = new ArrayList<JSONObject>();
+            int numOfFloor = eachBuilding.get_num_of_floor();
+            String buildingName = eachBuilding.get_building_name();
+            int [] index = eachBuilding.get_floor_num_list_int();
+            for (int j = 0; j <floorList.size(); j++){
+                floor eachFloor = floorList.get(j);
+                String map = eachFloor.get_img();
+                int level = eachFloor.get_floor_num();
+                List<Room> roomList = eachFloor.get_rooms();
+                JSONObject roomsJSON = roomJSONList(roomList,map,level);
+                roomJSONArray.add(roomsJSON);
+            }
+            JSONObject buildingJSON = buildingJSON(buildingName, numOfFloor, index, roomJSONArray);
+            big_json.add(buildingJSON);
+        }
+        writeJSONArr(big_json,"superjson.json");
     }
 }

@@ -1,4 +1,5 @@
 package uwo_map_organization_program;
+
 public class Washroom extends Room{
     private String type;
     public Washroom(String room, int flo, String buil, int[] position, String desc, String ty) {

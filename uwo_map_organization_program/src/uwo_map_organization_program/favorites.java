@@ -1,23 +1,32 @@
 package uwo_map_organization_program;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * save the favorite rooms chosen by the user
+ */
 public class favorites{
-	private Room[] favor_point;
-	private int top;
-	private final int array_ini_size = 10;
+	private List<Room> favor_point; // the list that saved all of the rooms that chosen by user
+
+	/**
+	 * create a new empty favorite list
+	 */
 	public favorites () {
-		favor_point = new Room[array_ini_size];
-		top = 0;
+		favor_point = new ArrayList<Room>();
 	}
+
 	
-	public favorites(int size) {
-		favor_point = new Room [size];
-		top = 0;
-	}
-	
+	/**
+	 * 
+	 * @param target	the room that willing to check	
+	 * @return	true if the room is in the favorite list, false otherwise
+	 * check if the target room is currently in the favorite list
+	 */
 	public boolean check_room (Room target) {
-		for (int i = 0; i<top; i++) {
-			if (favor_point[i].get_roomNumber() == target.get_roomNumber()) {
-				if (favor_point[i].get_building().equals(target.get_building())) {
+		for (int i = 0; i<favor_point.size(); i++) {
+			if (favor_point.get(i).get_roomNumber() == target.get_roomNumber()) {
+				if (favor_point.get(i).get_building().equals(target.get_building())) {
 					return true;
 				}
 			}
@@ -25,39 +34,64 @@ public class favorites{
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param target	the room that willing to add
+	 * @return	true if added the room successfully, false otherwise
+	 * add the target room into the favorite list
+	 */
 	public boolean add_room (Room target) {
 		if (check_room(target)==true) {
 			return false;
 		}
-		if (top == favor_point.length) {
-			Room [] newList = new Room[favor_point.length+10];
-			for (int i = 0; i<top;i++) {
-				newList[i] = favor_point[i];
-			}
-			favor_point = newList;
-		}
-		favor_point[top] = target;
-		top ++;
+		
+		favor_point.add(target);
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param target	the room that willing to delete
+	 * @return	true if deleted the room successfully, false otherwise
+	 * delete the target room from the favorite list
+	 */
 	public boolean delete_room (Room target) {
 		if (check_room(target)==false) {
 			return false;
 		}
-		for (int i = 0;i<top; i++) {
-			if (favor_point[i].get_roomNumber() == target.get_roomNumber()) {
-				if (favor_point[i].get_building().equals(target.get_building())){
-					for (int j = i; j<favor_point.length-1; j++) {
-						favor_point[j] = favor_point[j+1];
-					}
-					favor_point[top-1] = null;
-					top --;
-					return true;
-				}
+		favor_point.remove(target);
+		return true;
+	}
+	
+	/**
+	 * 
+	 * @return	the room number of all rooms in the favorite list
+	 * return the room number of all rooms in the favorite list in string
+	 */
+	public String[] get_fav_list () {
+		String[] result = new String [favor_point.size()];
+		int count = 0;
+		for (int i = 0; i<favor_point.size();i++) {
+			result[count] = favor_point.get(i).get_roomNumber();
+			count ++;
+		}
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @param target	the name of the room that want to check
+	 * @return	the Room object of the room number given, null if cannot find
+	 * search the Room from the favorite list based on the room number given
+	 */
+	public Room get_fav_room(String target) {
+		for (int i = 0; i<favor_point.size();i++) {
+			if (favor_point.get(i).get_roomNumber().equals(target)) {
+				return favor_point.get(i);
 			}
 		}
-		return false;
+		System.out.println("cannot find the room..");
+		return null;
 	}
 	
 }
