@@ -58,7 +58,7 @@ public class MetaData {
      * @param roomList: List of Rooms objects
      * @return JSON obj
      */
-    public static JSONObject roomJSONList(List<Room> roomList){
+    public static JSONObject roomJSONList(List<Room> roomList, String map, int level){
         JSONArray roomArray =  new JSONArray();
         JSONObject roomJSONList = new JSONObject();
         for (int i = 0; i < roomList.size(); i++){// Generate list of Room objects
@@ -70,9 +70,39 @@ public class MetaData {
             int y = target.get_y();
             String description = target.get_description();
             JSONObject roomObj = roomJSON(roomNum, floor, building, x, y, description);
-            roomArray.add(roomObj);
+
+            JSONObject roomDetails = new JSONObject();
+            roomDetails.put("roomNumber", roomNum);
+            roomDetails.put("floor", floor);
+            roomDetails.put("building", building);
+            roomDetails.put("x_coordinate", x);
+            roomDetails.put("y_coordinate", y);
+            roomDetails.put("description", description);
+            // Special rooms
+            if (description.equals("Classroom")){
+                Classroom replaced = (Classroom) target;
+                int tempmax = replaced.getMaximum_seats();
+                roomDetails.put("maximum_seats",tempmax);
+            } else if (description.equals("Eatery")){
+                Eatery replaced = (Eatery) target;
+                int tempmax = replaced.getRate();
+                roomDetails.put("rate",tempmax);
+            }  else if (description.equals("Elevator")){
+                Elevator replaced = (Elevator) target;
+                int tempmax = replaced.getMaximum_weight();
+                roomDetails.put("maximum_weight",tempmax);
+            } else if (description.equals("Washroom")){
+                Washroom replaced = (Washroom) target;
+                String tempmax = replaced.getType();
+                roomDetails.put("type",tempmax);
+            }
+            JSONObject roomObject = new JSONObject();
+            roomObject.put("room", roomDetails);
+            roomArray.add(roomObject);
         }
-        roomJSONList.put("room list",roomArray);
+        roomJSONList.put("floor map",map);
+        roomJSONList.put("floor level",level);
+        roomJSONList.put("floor",roomArray);
         return roomJSONList;
     }
 
@@ -86,7 +116,7 @@ public class MetaData {
      * @param description: type of room
      * @return: room JSON object
      */
-    public static JSONObject roomJSON(String roomNumber, int floor, String building, double x_coordinate, double y_coordinate, String description){
+    public static JSONObject roomJSON(String roomNumber, int floor, String building, int x_coordinate, int y_coordinate, String description){
         JSONObject roomDetails = new JSONObject();
         roomDetails.put("roomNumber", roomNumber);
         roomDetails.put("floor", floor);
@@ -94,6 +124,7 @@ public class MetaData {
         roomDetails.put("x_coordinate", x_coordinate);
         roomDetails.put("y_coordinate", y_coordinate);
         roomDetails.put("description", description);
+
         JSONObject roomObject = new JSONObject();
         roomObject.put("room", roomDetails);
 
@@ -198,27 +229,27 @@ public class MetaData {
                     String description = (String) JSONroom.get("description");
                     int[] position = {x_coordinate, y_coordinate};
                     if (description.equals("Classroom")){
-                        
+
                         Long tempmax1 = (Long)JSONroom.get("maximum_seats");
                 		Integer tempmax = new Integer (tempmax1.intValue());
                 		int max = tempmax.intValue();
-                        
+
                         Classroom room = new Classroom(roomNum,floorNum,buildingName,position,description,max);
                         roomList.add(room);
                     } else if (description.equals("Eatery")){
-                        
+
                         Long temprate1 = (Long)JSONroom.get("rate");
                 		Integer temprate = new Integer (temprate1.intValue());
                 		int rate = temprate.intValue();
-                        
+
                         Eatery room = new Eatery(roomNum,floorNum,buildingName,position,description,rate);
                         roomList.add(room);
                     }  else if (description.equals("Elevator")){
-                        
+
                         Long tempmax1 = (Long)JSONroom.get("maximum_weight");
                 		Integer tempmax = new Integer (tempmax1.intValue());
                 		int max = tempmax.intValue();
-                        
+
                         Elevator room = new Elevator(roomNum,floorNum,buildingName,position,description,max);
                         roomList.add(room);
                     } else if (description.equals("Washroom")){
@@ -290,8 +321,10 @@ public class MetaData {
             int [] index = eachBuilding.get_floor_num_list_int();
             for (int j = 0; j <floorList.size(); j++){
                 floor eachFloor = floorList.get(j);
+                String map = eachFloor.get_img();
+                int level = eachFloor.get_floor_num();
                 List<Room> roomList = eachFloor.get_rooms();
-                JSONObject roomsJSON = roomJSONList(roomList);
+                JSONObject roomsJSON = roomJSONList(roomList,map,level);
                 roomJSONArray.add(roomsJSON);
             }
             JSONObject buildingJSON = buildingJSON(buildingName, numOfFloor, index, roomJSONArray);
